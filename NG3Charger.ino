@@ -179,7 +179,7 @@ void setup()
   if (settings.CAN_ENABLED)
   {
     // Initialize MCP2515 running at 8MHz with a baudrate according to eeprom settings, extended IDs ONLY
-    if(CAN0.begin(MCP_EXT, settings.CHARGER_MIN_VOLTS, MCP_8MHZ) == CAN_OK) CAN_Status = true;
+    if(CAN0.begin(MCP_EXT, settings.CAN_SPEED, MCP_8MHZ) == CAN_OK) CAN_Status = true;
   
     if (CAN_Status) // Continue CAN configuration if CAN init is successful
     {
